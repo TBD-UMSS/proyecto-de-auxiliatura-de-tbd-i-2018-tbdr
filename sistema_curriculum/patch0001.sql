@@ -16,7 +16,7 @@ CREATE TABLE curr.institucion_educativa (
 ) 
 WITH (oids = false);
 
-ALTER TABLE curr.instuccion_educativa
+ALTER TABLE curr.institucion_educativa
   ALTER COLUMN id_institucion_educativa SET STATISTICS 0;
 
 --------------- SQL ---------------
@@ -78,7 +78,7 @@ CREATE TABLE curr.certificado (
    id_certificado SERIAL NOT NULL,
    fecha_emision DATE,
    id_dato_personal INTEGER,
-   PRIMARY KEY(id_certificacion)
+   PRIMARY KEY(id_certificado)
 )
 
 WITH (oids = false); 
@@ -86,7 +86,7 @@ WITH (oids = false);
 --------------- SQL ---------------
 
 CREATE TABLE curr.tipo_certificado (
-   id_certificado INTERGER,
+   id_certificado INTEGER,
    tipo_certificado VARCHAR NOT NULL
 )
 
