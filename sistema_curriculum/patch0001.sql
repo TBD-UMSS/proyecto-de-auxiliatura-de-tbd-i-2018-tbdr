@@ -11,7 +11,7 @@ CREATE TABLE curr.institucion_educativa (
   id_institucion_educativa SERIAL NOT NULL,
   instituccion_educativa VARCHAR NOT NULL,
   direccion VARCHAR,
-  telefono VARCHAR(1),
+  telefono VARCHAR(10),
   PRIMARY KEY(id_institucion_educativa)
 ) 
 WITH (oids = false);
@@ -24,11 +24,11 @@ ALTER TABLE curr.instuccion_educativa
 CREATE TABLE curr.dato_personal (
   id_dato_personal SERIAL NOT NULL,
   nombres VARCHAR NOT NULL,
-  apellido_paterno VARCHAR,
-  apellido_materno VARCHAR,
-  ci INTEGER,
-  fecha_nacimiento DATE,
-  fecha_registro TIMESTAMP WITHOUT TIME ZONE DEFAULT now(),
+  apellido_paterno VARCHAR NOT NULL,
+  apellido_materno VARCHAR NOT NULL,
+  ci INTEGER NOT NULL,
+  fecha_nacimiento DATE NOT NULL,
+  fecha_registro TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
   PRIMARY KEY(id_dato_personal)
 ) 
 WITH (oids = false);
@@ -87,7 +87,7 @@ WITH (oids = false);
 
 CREATE TABLE curr.tipo_certificado (
    id_certificado INTERGER,
-   tipo_certificado VARCHAR
+   tipo_certificado VARCHAR NOT NULL
 )
 
 
